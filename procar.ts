@@ -18,10 +18,9 @@ enum direction {
     後,
     右,
     左,
-    右前,
-    左前,
+    右回転,
+    左回転,
     止まる,
-    しっかり止ま
 }
 
 enum lotation {
@@ -112,13 +111,13 @@ namespace eureka_blocks_car {
                 pins.servoWritePin(AnalogPin.P14, 90);
                 pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
                 break;
-            case direction.左前:
-                pins.servoWritePin(AnalogPin.P14, 60);
-                pins.servoWritePin(AnalogPin.P13, 100);
+            case direction.左回転:
+                pins.servoWritePin(AnalogPin.P14, 0);
+                pins.servoWritePin(AnalogPin.P13, 180);
                 break;
-            case direction.右前:
-                pins.servoWritePin(AnalogPin.P14, 80);
-                pins.servoWritePin(AnalogPin.P13, 120);
+            case direction.右回転:
+                pins.servoWritePin(AnalogPin.P14, 180);
+                pins.servoWritePin(AnalogPin.P13, 0);
                 break;
             case direction.止まる:
                 pins.digitalWritePin(DigitalPin.P13, 0)
@@ -174,14 +173,14 @@ namespace eureka_blocks_car {
                 pins.servoWritePin(AnalogPin.P13, 90);
                 pins.servoWritePin(AnalogPin.P14, 90);
                 break;
-            case direction.左前:
+            case direction.左回転:
                 pins.servoWritePin(AnalogPin.P14, 60);
                 pins.servoWritePin(AnalogPin.P13, 100);
                 basic.pause(time_sec * 1000);
                 pins.servoWritePin(AnalogPin.P13, 90);
                 pins.servoWritePin(AnalogPin.P14, 90);
                 break;
-            case direction.右前:
+            case direction.右回転:
                 pins.servoWritePin(AnalogPin.P14, 80);
                 pins.servoWritePin(AnalogPin.P13, 120);
                 basic.pause(time_sec * 1000);
@@ -191,6 +190,7 @@ namespace eureka_blocks_car {
             case direction.止まる:
                 pins.digitalWritePin(DigitalPin.P13, 0)
                 pins.digitalWritePin(DigitalPin.P14, 0)
+                basic.pause(time_sec * 1000);
                 break;
         }
     }
