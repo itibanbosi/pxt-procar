@@ -156,36 +156,36 @@ namespace eureka_blocks_car {
                     pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100 - con_le);
                 }
                 basic.pause(time_sec * 1000);
-                pins.servoWritePin(AnalogPin.P13, 90);
-                pins.servoWritePin(AnalogPin.P14, 90);
+                pins.digitalWritePin(DigitalPin.P13, 0)
+                pins.digitalWritePin(DigitalPin.P14, 0)
                 break;
             case direction.左:
                 pins.servoWritePin(AnalogPin.P14, 90 - (90 * (con_op + 100)) / 100);
                 pins.servoWritePin(AnalogPin.P13, 90);
                 basic.pause(time_sec * 1000);
-                pins.servoWritePin(AnalogPin.P13, 90);
-                pins.servoWritePin(AnalogPin.P14, 90);
+                pins.digitalWritePin(DigitalPin.P13, 0)
+                pins.digitalWritePin(DigitalPin.P14, 0)
                 break;
             case direction.右:
                 pins.servoWritePin(AnalogPin.P14, 90);
                 pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
                 basic.pause(time_sec * 1000);
-                pins.servoWritePin(AnalogPin.P13, 90);
-                pins.servoWritePin(AnalogPin.P14, 90);
+                pins.digitalWritePin(DigitalPin.P13, 0)
+                pins.digitalWritePin(DigitalPin.P14, 0)
                 break;
             case direction.右回転:
                 pins.servoWritePin(AnalogPin.P14, 180);
                 pins.servoWritePin(AnalogPin.P13, 180);
                 basic.pause(time_sec * 1000);
-                pins.servoWritePin(AnalogPin.P13, 90);
-                pins.servoWritePin(AnalogPin.P14, 90);
+                pins.digitalWritePin(DigitalPin.P13, 0)
+                pins.digitalWritePin(DigitalPin.P14, 0)
                 break;
             case direction.左回転:
                 pins.servoWritePin(AnalogPin.P14, 0);
                 pins.servoWritePin(AnalogPin.P13, 0);
                 basic.pause(time_sec * 1000);
-                pins.servoWritePin(AnalogPin.P13, 90);
-                pins.servoWritePin(AnalogPin.P14, 90);
+                pins.digitalWritePin(DigitalPin.P13, 0)
+                pins.digitalWritePin(DigitalPin.P14, 0)
                 break;
             case direction.止まる:
                 pins.digitalWritePin(DigitalPin.P13, 0)
