@@ -174,15 +174,15 @@ namespace eureka_blocks_car {
                 pins.servoWritePin(AnalogPin.P14, 90);
                 break;
             case direction.左回転:
-                pins.servoWritePin(AnalogPin.P14, 60);
-                pins.servoWritePin(AnalogPin.P13, 100);
+                pins.servoWritePin(AnalogPin.P14, 0);
+                pins.servoWritePin(AnalogPin.P13, 180);
                 basic.pause(time_sec * 1000);
                 pins.servoWritePin(AnalogPin.P13, 90);
                 pins.servoWritePin(AnalogPin.P14, 90);
                 break;
             case direction.右回転:
-                pins.servoWritePin(AnalogPin.P14, 80);
-                pins.servoWritePin(AnalogPin.P13, 120);
+                pins.servoWritePin(AnalogPin.P14, 0);
+                pins.servoWritePin(AnalogPin.P13, 180);
                 basic.pause(time_sec * 1000);
                 pins.servoWritePin(AnalogPin.P13, 90);
                 pins.servoWritePin(AnalogPin.P14, 90);
